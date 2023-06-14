@@ -1,3 +1,4 @@
 naver blog crawler.zip
 naver blog crawler/chromedriver_win32/chromedriver.exe
 naver blog crawler/chromedriver_win32/LICENSE.chromedriver
+*.xlsx
