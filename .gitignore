@@ -1,5 +1,4 @@
 chromedriver_win32/
-*.xlsx
 *.csv
 *.txt
 *.pyc
