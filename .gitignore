@@ -1,5 +1,6 @@
 chromedriver_win32/
 *.csv
+*.xlsx
 *.txt
 *.pyc
 _pycache_/
