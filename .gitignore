@@ -3,6 +3,7 @@ chromedriver_win32/
 *.xlsx
 *.txt
 *.pyc
+*.pkl
 _pycache_/
 # Byte-compiled / optimized / DLL files
 __pycache__/
