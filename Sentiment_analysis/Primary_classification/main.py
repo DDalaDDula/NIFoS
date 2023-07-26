@@ -1,5 +1,4 @@
 import torch
-import torch.nn as nn
 import pandas as pd
 from transformers import ElectraTokenizer
 from torch.utils.data import DataLoader
@@ -13,27 +12,24 @@ from evaluate import print_evaluation_metrics
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # 예시 데이터로 대체 (이후 실제 데이터셋으로 변경해야 합니다)
-data = {
-    'sentence': ['이 영화 정말 재미있다!', '이거 뭐냐 진짜 별로다...', '오늘 날씨 어때요?'],
-    'label': [0, 1, 2]
-}
-dataset = pd.DataFrame(data)
-
+dataset = pd.read_csv("C:/Users/user/Python/sentiment_analyze/NIFoS/Sentiment_analysis/dataset/primary_classification_data.csv", encoding='UTF-8')
 # ElectraTokenizer 로드
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-v3")
+tokenizer = ElectraTokenizer.from_pretrained("koelectra-base-v3")
 
 # 데이터셋 준비
-max_length = 128
+Max_length = 128
 batch_size = 32
 
-custom_dataset = CustomDataset(dataset, tokenizer, max_length)
+custom_dataset = CustomDataset(dataset, tokenizer, Max_length)
 data_loader = DataLoader(custom_dataset, batch_size=batch_size, shuffle=True)
 
 # 모델 로드
 num_labels = 3
 model = load_model(num_labels)
 
-# 옵티마이저 및 로스 함수 정의 (이전 코드와 동일)
+# 옵티마이저 및 로스 함수 정의
+optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
+loss_fn = torch.nn.CrossEntropyLoss()
 
 # 훈련
 num_epochs = 5

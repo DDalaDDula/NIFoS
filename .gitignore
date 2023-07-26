@@ -14,5 +14,6 @@ KoBERT/
 감성 및 발화 스타일 동시 고려 음성합성 데이터/
 감성대화/
 시각화/
+koelectra-base-v3-discriminator/
 # Byte-compiled / optimized / DLL files
 __pycache__/
