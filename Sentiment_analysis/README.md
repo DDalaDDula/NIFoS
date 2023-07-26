@@ -7,5 +7,6 @@
  3. AI-Hub감정 분류를 위한 대화 음성 데이터셋 : https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=263
  4. AI-Hub감성 대화 말뭉치 : https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=86
  5. 챗봇 트레이닝용 문답 데이터 : https://github.com/songys/Chatbot_data
- 
+ 6. 노래별 감정라벨 분류데이터(감정별_가사_정리_9class.xlsx) : https://github.com/jongmin-oh/lyrics_emotion_analysis/tree/main/lexicon_vocab - 활용 안함.
+
  5. Toxic Comment Data?? 활용검토 예정 : https://github.com/songys/Toxic_comment_data

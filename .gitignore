@@ -15,5 +15,6 @@ KoBERT/
 감성대화/
 시각화/
 koelectra-base-v3-discriminator/
+checkpoint/
 # Byte-compiled / optimized / DLL files
 __pycache__/
