@@ -4,9 +4,12 @@
  사용 데이터 목록 참고(https://littlefoxdiary.tistory.com/42):
  1. 네이버 영화 리뷰 : https://github.com/e9t/nsmc
  2. 네이버 쇼핑 리뷰 & 스팀 게임 리뷰 : https://github.com/bab2min/corpus/tree/master/sentiment
- 3. AI-Hub감정 분류를 위한 대화 음성 데이터셋 : https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=263
+ 3. AI-Hub감정 분류를 위한 대화 음성 데이터셋 : https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=263 - 활용 안함.
  4. AI-Hub감성 대화 말뭉치 : https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=86
  5. 챗봇 트레이닝용 문답 데이터 : https://github.com/songys/Chatbot_data
  6. 노래별 감정라벨 분류데이터(감정별_가사_정리_9class.xlsx) : https://github.com/jongmin-oh/lyrics_emotion_analysis/tree/main/lexicon_vocab - 활용 안함.
+ 7. KNU 한국어 감성사전(긍정, 부정, 중립) : https://github.com/park1200656/KnuSentiLex
 
  5. Toxic Comment Data?? 활용검토 예정 : https://github.com/songys/Toxic_comment_data
+ 
+ https://github.com/park1200656/KnuSentiLex : 군산대학교 긍/부정 단어사전
