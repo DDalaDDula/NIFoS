@@ -11,6 +11,7 @@ chromedriver_win32/
 *.pickle
 _pycache_/
 KoBERT/
+*.whl
 감정 분류를 위한 대화 음성 데이터셋/
 감성 및 발화 스타일 동시 고려 음성합성 데이터/
 국립국어원 감성 분석 말뭉치 2020(버전 1.0)/
@@ -20,3 +21,4 @@ koelectra-base-v3-discriminator/
 checkpoint/
 # Byte-compiled / optimized / DLL files
 __pycache__/
+myboard/db.sqlite3
