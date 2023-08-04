@@ -21,3 +21,4 @@ koelectra-base-v3-discriminator/
 checkpoint/
 # Byte-compiled / optimized / DLL files
 __pycache__/
+myboard/db.sqlite3
