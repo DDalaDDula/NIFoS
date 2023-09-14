@@ -27,3 +27,4 @@ checkpoint/
 __pycache__/
 myboard/db.sqlite3
 .gitattributes
+Ternary_classification_learning.ipynb
