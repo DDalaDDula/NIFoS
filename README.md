@@ -1,5 +1,6 @@
 # 🌳Sentiment_Analysis
 🌳NIFoS(국림산림과학원) 데이터분석직무
+
 Korean Text Multi-Classification Process
 ### Set up
 
@@ -80,3 +81,10 @@ overfitting을 방지하기 위해 dropout은 처음부터 **0.2**로 설정되�
 최종적으로 모델은, 입력 텍스트의 시퀀스를 3개의 클래스중 하나로 분류하여 해당 텍스트가 어떤 카테고리에 속하는지를 예측합니다.
 
 ---
+### 시각화 파일
+
+**dataset_split** 함수실행시, sentence를 tokenizing 하여 시각화합니다. 원하는 비율을 설정하여 최적의 **padding_length**를 도출시킬 수 있습니다.
+![Padding_length visualization](./padding_length.PNG)
+
+**plot_training_progress** 함수실행시, **train_with_early_stopping**함수를 통한 모델의 학습과정을 시각화합니다. **Plotly**로 시각화합니다.
+![Learing process visualization](./plot_vis.PNG)
