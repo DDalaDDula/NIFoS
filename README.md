@@ -20,9 +20,9 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 
 **ELECTRA**모델은 학습 효율을 향상시키기 위해 **R**eplaced **T**oken **D**etection (**RTD**)이라는 새로운 pre-training Task를 제안하며, 보다 빠르고 효과적으로 학습. 결과적으로 모델 크기, 데이터, 컴퓨팅 리소스가 동일한 조건에서 기존 **GOOGLE BERT** 모델의 성능을 능가하였습니다. 
 
-다중분류에 사용된 모델은 monologg님의 [**koELECTRA**](https://github.com/monologg/KoELECTRA/tree/master)모델입니다. ELECTRA 모델을 한국어 자연어 처리 작업에 적용할 수 있도록  한국어 텍스트 데이터를  대규모로 pre-training(사전학습)시킨 모델입니다.
+다중분류에 사용된 모델은 monologg님의 [**koELECTRA**](https://github.com/monologg/KoELECTRA/tree/master)모델입니다. **koELECTRA**는 ELECTRA 모델을 한국어 자연어 처리 작업에 적용할 수 있도록  한국어 텍스트 데이터를  대규모로 pre-training(사전학습)시킨 모델입니다.
 
-이번 3진 분류에 활용된 모델은 koELECTRA의 [[**koelectra-base-v3-discriminator**](https://huggingface.co/monologg/koelectra-base-v3-discriminator)모델로, 34GB의 한국어 Corpus(뉴스, 위키, 나무위키, 신문, 문어, 구어, 메신저, 웹)를 학습한 모델입니다.
+이번 3진 분류에 활용된 모델은 koELECTRA의 [**koelectra-base-v3-discriminator**](https://huggingface.co/monologg/koelectra-base-v3-discriminator)모델로, 34GB의 한국어 Corpus(뉴스, 위키, 나무위키, 신문, 문어, 구어, 메신저, 웹)를 학습한 모델입니다.
 
 ### **About KoELECTRA**
 
