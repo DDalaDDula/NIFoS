@@ -7,7 +7,6 @@ chromedriver_win32/
 *.zip
 *.json
 *.pt
-*.png
 *.pickle
 _pycache_/
 KoBERT/
