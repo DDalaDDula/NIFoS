@@ -21,7 +21,7 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 
 다중분류에 사용된 모델은 monologg님의 [**koELECTRA**](https://github.com/monologg/KoELECTRA/tree/master)모델입니다. ELECTRA 모델을 한국어 자연어 처리 작업에 적용할 수 있도록  한국어 텍스트 데이터를  대규모로 pre-training(사전학습)시킨 모델입니다.
 
-이번 3진 분류에 활용된 모델은 koELECTRA의 [“koelectra-base-v3-discriminator”](https://huggingface.co/monologg/koelectra-base-v3-discriminator)모델로, 34GB의 한국어 Corpus(뉴스, 위키, 나무위키, 신문, 문어, 구어, 메신저, 웹)를 학습한 모델입니다.
+이번 3진 분류에 활용된 모델은 koELECTRA의 [[**koelectra-base-v3-discriminator**](https://huggingface.co/monologg/koelectra-base-v3-discriminator)모델로, 34GB의 한국어 Corpus(뉴스, 위키, 나무위키, 신문, 문어, 구어, 메신저, 웹)를 학습한 모델입니다.
 
 ### **About KoELECTRA**
 
@@ -40,11 +40,12 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 
 
 출처 = KoELECTRA Github - https://github.com/monologg/KoELECTRA/tree/master
+
 출처 = koelectra-base-v3-discriminator Huggingface - https://huggingface.co/monologg/koelectra-base-v3-discriminator
 
 ---
 ### 3진 분류를 위한 Fine-Tunning 과정
----
+
 python 3.7.16 
 
 transformers==2.1.1
@@ -61,7 +62,8 @@ RTX A4000 / CUDA 10.0환경에서 사용
 
 overfitting을 방지하기 위해 dropout은 처음부터 **0.2**로 설정되도록 하였습니다.
 
-**koelectra-base-v3-discriminator** 모델은 **ElectraForSequenceClassification** 모델로 불러왔습니다. **ElectraForSequenceClassification**는 Hugging Face의 Transformers 라이브러리에서 제공되는 사전 훈련된 **ELECTRA** 모델을 기반으로 한 문장 분류(Classification) 모델입니다. **ElectraForSequenceClassification**모델은 ELECTRA 모델의 사전 훈련된 가중치를 활용하여 텍스트 데이터에서 특성을 추출하고, 그 다음에 특정 분류 작업에 맞게 추가로 학습되는 레이어를 포함하고 있습니다. 이러한 레이어는 주어진 입력 문장을 분류하기 위한 최종 출력을 생성합니다.
+**koelectra-base-v3-discriminator** 모델은 **ElectraForSequenceClassification** 모델로 불러왔습니다. 
+**ElectraForSequenceClassification**는 Hugging Face의 Transformers 라이브러리에서 제공되는 사전 훈련된 **ELECTRA** 모델을 기반으로 한 문장 분류(Classification) 모델입니다. **ElectraForSequenceClassification**모델은 ELECTRA 모델의 사전 훈련된 가중치를 활용하여 텍스트 데이터에서 특성을 추출하고, 그 다음에 특정 분류 작업에 맞게 추가로 학습되는 레이어를 포함하고 있습니다. 이러한 레이어는 주어진 입력 문장을 분류하기 위한 최종 출력을 생성합니다.
 
 ---
 ### 모델 구조
