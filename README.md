@@ -83,8 +83,8 @@ overfitting을 방지하기 위해 dropout은 처음부터 **0.2**로 설정되�
 ---
 ### 시각화 파일(예시)
 
-**dataset_split** 함수실행시, sentence를 tokenizing 하여 시각화합니다. 원하는 비율을 설정하여 최적의 **padding_length**를 도출시킬 수 있습니다.  **Plotly**로 시각화
+**dataset_split** 함수 실행 시, sentence를 tokenizing 하여 시각화합니다. 원하는 비율을 설정하여 최적의 **padding_length**를 도출시킬 수 있습니다. (**Plotly**로 시각화)
 ![Padding_length visualization](./visualization/padding_length.PNG)
 
-**plot_training_progress** 함수실행시, **train_with_early_stopping**함수를 통한 모델의 학습과정을 시각화합니다. **Plotly**로 시각화
+**plot_training_progress** 함수 실행 시, **train_with_early_stopping**함수를 통한 모델의 학습과정을 시각화합니다. (**Plotly**로 시각화)
 ![Learing process visualization](./visualization/plot_vis.PNG)
