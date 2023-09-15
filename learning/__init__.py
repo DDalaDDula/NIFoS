@@ -230,7 +230,7 @@ def train_with_early_stopping(train_dataloader, val_dataloader, model, optimizer
 
     # # 최적의 모델 상태를 dict로 저장
     os.makedirs("model_state", exist_ok=True)
-    torch.save(best_model_state_dict, f"best_model_state_epoch{num_epochs}.pt")
+    torch.save(best_model_state_dict, f"./model_state/best_model_state_epoch{epoch}.pt")
     
     return train_losses_epoch, train_accs_epoch, val_losses_epoch, val_accs_epoch
 
