@@ -62,8 +62,7 @@ def dataset_split(padding_length, sentence_list, labels, modelpath, test_size): 
     return train_dataloader, val_dataloader
 
 # 모델 로드하고 GPU 가속을 활성화 하는 함수 설정
-def load_model(modelpath, num_labels, model_state_path=None, optimizer_state_path=None, checkpoint_path=None): # 모델경로, label수, 모델 dict 경로, 옵티마이저 dict 경로, 모델 체크포인트 경로
-    # koELECTRA 모델 불러오기
+def load_model(modelpath, num_labels, model_state_path=None, optimizer_state_path=None, checkpoint_path=None, new_dropout_rate=0.2): # 모델경로, label수, 모델 dict 경로, 옵티마이저 dict 경로, 모델 체크포인트 경로, dropout비율
     model = ElectraForSequenceClassification.from_pretrained(modelpath, num_labels=num_labels)
 
     # 옵티마이저와 손실 함수 설정   
@@ -89,9 +88,6 @@ def load_model(modelpath, num_labels, model_state_path=None, optimizer_state_pat
     # 장치 설정 (GPU 사용을 위해)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
-
-    # 변경하고자 하는 Dropout 비율
-    new_dropout_rate = 0.2
 
     # 모든 Dropout 레이어의 비율 변경
     for name, module in model.named_modules():
@@ -237,3 +233,16 @@ def train_with_early_stopping(train_dataloader, val_dataloader, model, optimizer
     torch.save(best_model_state_dict, f"best_model_state_epoch{num_epochs}.pt")
     
     return train_losses_epoch, train_accs_epoch, val_losses_epoch, val_accs_epoch
+
+# 한국어 문장을 입력으로 받아서 예측 라벨을 출력하는 함수
+def predict_label(sentence, model, modelpath, device):
+    # koELECTRA 토크나이저 불러오기
+    tokenizer = ElectraTokenizer.from_pretrained(modelpath)
+    model.eval()
+    with torch.no_grad():
+        inputs = tokenizer(sentence, return_tensors='pt', truncation=True, padding=True)
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+        outputs = model(**inputs)
+        logits = outputs.logits
+        predicted_label = torch.argmax(logits, dim=1).item()
+        return predicted_label
