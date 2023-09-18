@@ -18,7 +18,7 @@ Korean Text Multi-Classification Process
 
 GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 감지하는 것이 주된 목표입니다.
 
-**ELECTRA**모델은 학습 효율을 향상시키기 위해 **R**eplaced **T**oken **D**etection (**RTD**)이라는 새로운 pre-training Task를 제안하며, 보다 빠르고 효과적으로 학습. 결과적으로 모델 크기, 데이터, 컴퓨팅 리소스가 동일한 조건에서 기존 **GOOGLE BERT** 모델의 성능을 능가하였습니다. 
+**ELECTRA**모델은 학습 효율을 향상시키기 위해 **R**eplaced **T**oken **D**etection (**RTD**)이라는 새로운 pre-training Task를 제안하며 보다 빠르고 효과적으로 학습할 수 있습니다. **ELECTRA**모델은 결과적으로 모델의 크기, 데이터, 컴퓨팅 리소스가 동일한 조건에서 기존 [**GOOGLE BERT**](https://github.com/google-research/bert) 모델의 성능을 능가하였습니다. 
 
 다중분류에 사용된 모델은 monologg님의 [**koELECTRA**](https://github.com/monologg/KoELECTRA/tree/master)모델입니다. **koELECTRA**는 ELECTRA 모델을 한국어 자연어 처리 작업에 적용할 수 있도록  한국어 텍스트 데이터를  대규모로 pre-training(사전학습)시킨 모델입니다.
 
