@@ -14,7 +14,7 @@ Korean Text Multi-Classification Process
     conda activate NIFOS
 
 ---
-**ELECTRA** (**E**fficiently **L**earning an **E**ncoder that **C**lassifies **T**oken **R**eplacements **A**ccurately)란 ICLR(**I**nternational **C**onference on **L**earning **R**epresentations) 2020에서 GOOGLE RESEARCH 팀이 발표한, 새로운 pre-training(사전학습) 기법이 적용된 Language Model. 
+**ELECTRA** (**E**fficiently **L**earning an **E**ncoder that **C**lassifies **T**oken **R**eplacements **A**ccurately)란 ICLR(**I**nternational **C**onference on **L**earning **R**epresentations) 2020에서 GOOGLE RESEARCH 팀이 발표한 Language Model 입니다. 해당 모델은 새로운 pre-training(사전학습) 기법이 적용되었습니다.
 
 GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 감지하는 것이 주된 목표입니다.
 
@@ -39,6 +39,7 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 
 `Batch size`와 `Train steps`을 제외하고는 **원 논문의 Hyperparameter와 동일**
 
+출처 = ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators - https://openreview.net/pdf?id=r1xMH1BtvB
 
 출처 = KoELECTRA Github - https://github.com/monologg/KoELECTRA/tree/master
 
