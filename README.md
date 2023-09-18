@@ -37,7 +37,7 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 | --- | --- | --- | --- | --- | --- | --- |
 | Base v3 | 256 | 1.5M | 2e-4 | 512 | 0.33 | 14d |
 
-`Batch size`와 `Train steps`을 제외하고는 **원 논문의 Hyperparameter와 동일**
+`Batch size`와 `Train steps`을 제외하고는 원 논문의 **Hyperparameter**와 동일합니다.
 
 출처 = ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators - https://openreview.net/pdf?id=r1xMH1BtvB
 
@@ -46,7 +46,7 @@ GAN (Generative Adversarial Network) 기반의 모델로, 대체된 토큰을 �
 출처 = koelectra-base-v3-discriminator Huggingface - https://huggingface.co/monologg/koelectra-base-v3-discriminator
 
 ---
-### 3진 분류를 위한 Fine-Tunning 과정
+### 3진 분류를 위한 Fine-Tunning & Learning Process
 
 python 3.7.16 
 
@@ -54,9 +54,9 @@ transformers==2.1.1
 
 pytorch==1.13.1
 
-RTX A4000 / CUDA 10.0환경에서 사용
+RTX A4000 / CUDA 10.0
 
-**AdamW** 최적화 알고리즘을 사용했으며, 모델의 **lr**(Learning Rate)을 **5e-6**으로 최적화 함.
+**AdamW** 최적화 알고리즘을 사용했으며, 학습에서의 정체를 방지하기 위해 모델의 **lr**(Learning Rate)을 **2e-4**(KoELECTRA) 에서 **5e-6**으로 변경하였습니다.(나중에 REDUCELRONPLATEAU 함수 적용해서 변경해야 함)
 
 긍정/부정/중립 분리를 학습하기 위해 각각 긍정 또는 부정 또는 중립으로 라벨링된 한국어 corpus 약 59만개를 추가학습하였습니다.(평서문, 대화체, sns체 등)
 
@@ -75,17 +75,17 @@ overfitting을 방지하기 위해 dropout은 처음부터 **0.2**로 설정되�
     - ElectraEncoder: 여러 개의 ElectraLayer쌓은 형태로 구성되어 있으며, 입력 텍스트의 인코딩과 셀프 어텐션 메커니즘을 활용하여 텍스트를 임베딩합니다.
     - ElectraLayer: 각 레이어는 Multi-Head Self Attention과 Feed-Forward Neural Network등을 통해 입력 텍스트의 문맥과 의미를 이해함.
        
-2. **ElectraClassificationHead**: 이 부분은 ElectraModel의 출력을 이용하여 텍스트 분류를 수행함.
-    - dense: 입력 임베딩을 768차원으로 변환하는 fully connected 선형 레이어
-    - out_proj: 768차원의 벡터를 3개의 클래스(긍정, 부정, 중립)으로 mapping하는 선형 레이어
+2. **ElectraClassificationHead**: 이 부분은 ElectraModel의 출력을 이용하여 텍스트 분류를 수행합니다.
+    - dense: 입력 임베딩을 768차원으로 변환하는 fully connected 선형 레이어입니다
+    - out_proj: 768차원의 벡터를 3개의 클래스(긍정, 부정, 중립)으로 mapping하는 선형 레이어입니다
 
 최종적으로 모델은, 입력 텍스트의 시퀀스를 3개의 클래스중 하나로 분류하여 해당 텍스트가 어떤 카테고리에 속하는지를 예측합니다.
 
 ---
 ### 시각화 파일(예시)
 
-**dataset_split** 함수 실행 시, sentence를 tokenizing 하여 시각화합니다. 원하는 비율을 설정하여 최적의 **padding_length**를 도출시킬 수 있습니다. (**Plotly**로 시각화)
+**dataset_split** 함수 실행 시, sentence를 tokenizing 하여 시각화합니다. 원하는 비율을 설정하여 최적의 **padding_length**를 도출시킬 수 있습니다. (**Plotly**)
 ![Padding_length visualization](./visualization/padding_length.PNG)
 
-**plot_training_progress** 함수 실행 시, **train_with_early_stopping**함수를 통한 모델의 학습과정을 시각화합니다. (**Plotly**로 시각화)
+**plot_training_progress** 함수 실행 시, **train_with_early_stopping**함수를 통한 모델의 학습과정을 시각화합니다. (**Plotly**)
 ![Learing process visualization](./visualization/plot_vis.PNG)
