@@ -45,7 +45,7 @@ def dataset_split(padding_length, sentence_list, labels, modelpath, test_size): 
     tokenizer = ElectraTokenizer.from_pretrained(modelpath)
 
     # 문장을 토큰화하고 시퀀스로 변환
-    sequences = [tokenizer.encode(sentence, padding='max_length', max_length=60, truncation=True) for sentence in tqdm(sentence_list)]
+    sequences = [tokenizer.encode(sentence, padding=padding_length, max_length=padding_length, truncation=True) for sentence in tqdm(sentence_list)]
 
     # 학습 데이터와 검증 데이터로 분할
     train_sequences, val_sequences, train_labels, val_labels = train_test_split(
