@@ -1,5 +1,5 @@
-# 🌳Sentiment_Analysis
-🌳NIFoS(국림산림과학원) 데이터분석직무
+# Sentiment_Analysis
+🌳NIFoS Datascience
 
 Korean Text Multi-Classification Process
 ### Set up
